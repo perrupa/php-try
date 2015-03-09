@@ -24,9 +24,9 @@ try {
     $user = $userService->findBy($id);
     $responseBody = $this->serializeUser($user);
 
-    return new Response($user);
+    return new Response($responseBody);
 } catch (Exception $ex) {
-    return Response('error', 500);
+    return new Response('error', 500);
 }
 ```
 
